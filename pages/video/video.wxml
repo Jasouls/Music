@@ -1,0 +1,45 @@
+<view class="videoContainer">
+<!-- 头部区域 -->
+  <view class="header">
+    <image src="/static/images/video/video.jpg"></image>
+    <view class="search" bindtap="toSearch">
+      搜索音乐
+    </view>
+    <image src="/static/images/logo.png"></image>
+  </view>
+
+<!-- 导航区域 -->
+  <scroll-view scroll-x scroll-with-animation scroll-into-view="{{'scroll' + navId}}" class="navScroll" enable-flex>
+    <view id="{{'scroll' + item.id}}" class="navItem" wx:for="{{videoGroupList}}" wx:key="id">
+      <view class="navContent {{navId === item.id ? 'active' : ''}}" bindtap="changeNav" data-id="{{item.id}}">
+        {{item.name}}
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 视频列表区域 -->
+  <scroll-view
+    scroll-y class="videoScroll"
+    bindrefresherrefresh="handleRefresher" 
+    refresher-enabled
+    refresher-triggered="{{isTriggered}}"
+    bindscrolltolower="handleToLower"
+  >
+    <view class="videoItem" wx:for="{{videoList}}" wx:key="id">
+      <video
+        bindended="handleEnded"
+        bindtimeupdate="handleTimeUpdate"
+        object-fit="fill" 
+        autoplay 
+        src="{{item.data.urlInfo.url}}" 
+        bindplay="handlePlay" 
+        poster="{{item.data.coverUrl}}" 
+        id="{{item.data.vid}}" 
+        class="common" 
+        wx:if="{{videoId === item.data.vid}}"
+      >
+      </video>
+      <image bindtap="handlePlay" id="{{item.data.vid}}" src="{{item.data.coverUrl}}" class="common" wx:else></image>
+    </view>
+  </scroll-view>
+</view>

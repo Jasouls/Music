@@ -1,0 +1,111 @@
+/* pages/index/index.wxss */
+.banners{
+  width: 100%;
+  height: 300rpx;
+}
+.banners image{
+  width: 100%;
+  height: 100%;
+}
+
+.navContainer{
+  display: flex;
+  font-size: 32rpx;
+}
+.navItem{
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  text-align: center;
+  align-items: center;
+}
+
+.navItem .iconfont{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100rpx;
+  background: rgb(240,19,19);
+  font-size: 50rpx;
+  color: #fff;
+  margin: 20rpx 0;
+}
+
+.navItem text {
+  font-size: 26rpx;
+}
+
+.recommendContainer{
+  padding: 20rpx;
+}
+
+.scroll{
+  display: flex;
+  height: 300rpx;
+}
+
+.scroll .scrollItem{
+  width: 200rpx;
+  margin: 20rpx;
+}
+
+.scroll .scrollItem image{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+}
+
+.scroll .scrollItem text{
+  font-size: 26rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.topList{
+  padding: 20rpx;
+}
+
+.topListSwiper{
+  height: 440rpx;
+}
+
+.swiperItem{
+  width: 96%;
+  margin-top: 20rpx;
+  background-color: rgb(247, 247, 247);
+}
+
+.swiperItem .title{
+  font-size: 30rpx;
+  line-height: 80rpx;
+}
+
+.musicItem{
+  display: flex;
+  margin-bottom: 20rpx;
+}
+
+.musicItem image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 6rpx;
+}
+
+.musicItem .count{
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.musicItem .musicName{
+  line-height: 100rpx;
+  max-width: 400rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

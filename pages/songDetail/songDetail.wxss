@@ -1,0 +1,131 @@
+/* pages/songDetail/songDetail.wxss */
+.songDetailContainer{
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.songDetailContainer .circle{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 10rpx 0;
+  position: relative;
+  z-index: 100;
+}
+
+.songDetailContainer .needle{
+  width: 192rpx;
+  height: 274rpx;
+  position: relative;
+  left: 60rpx;
+  top: -40rpx;
+  z-index: 99;
+  transform-origin: 40rpx 0;
+  transform: rotateZ(-20deg);
+  transition: transform 1s;
+}
+
+.songDetailContainer .needleRotate{
+  transform: rotateZ(0deg);
+}
+
+.songDetailContainer .musicImg{
+  width: 370rpx;
+  height: 370rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.songDetailContainer .discContainer{
+  width: 598rpx;
+  height: 598rpx;
+  position: relative;
+  top: -170rpx;
+}
+
+.discAnimation{
+  animation: run 4s 1s linear infinite;
+}
+
+@keyframes run{
+  from{
+    transform: rotateZ(0);
+  }
+  to{
+    transform: rotateZ(360deg);
+  }
+}
+
+.songDetailContainer .discContainer .disc{
+  width: 598rpx;
+  height: 598rpx;
+}
+
+/* 底部 */
+.musicControl{
+  position: absolute;
+  bottom: 40rpx;
+  left: 0;
+  border-top: 1rpx solid #fff;
+  width: 100%;
+  display: flex;
+}
+
+.musicControl text{
+  width: 20%;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  color: white;
+  font-size: 50rpx;
+}
+
+.musicControl text.big{
+  font-size: 80rpx;
+}
+
+.progressControl{
+  position: absolute;
+  bottom: 200rpx;
+  width: 640rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+}
+
+.barControl{
+  width: 450rpx;
+  height: 4rpx;
+  background-color: rgba(0,0,0,0.5);
+  margin: auto;
+  position: relative;
+}
+
+.audioTime{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 4rpx;
+  background: red;
+}
+
+.audioCircle{
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  z-index: 2;
+  top: -4rpx;
+  right: -12rpx;
+}
